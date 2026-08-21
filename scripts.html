@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerScripts - Scripts Directory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">⚡ <span>PowerScripts</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="scripts.html" class="active">Scripts</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://buymeacoffee.com/emileg" target="_blank" class="bmac-btn">☕ Buy Me a Coffee</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Script Directory</h1>
+      <p>Browse and run scripts directly in PowerShell with a single click copy.</p>
+    </div>
+
+    <div class="script-grid">
+
+      <!-- Script 1 : PowerBlock -->
+      <div class="card">
+        <div>
+          <span class="badge badge-game">🎮 GAME</span>
+          <h2>🧱 PowerBlock</h2>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">
+            A retro Tetris game featuring animated ASCII graphics and real-time generated 8-bit background music.
+          </p>
+        </div>
+        <div class="code-box-wrapper">
+          <div class="code-box" id="cmd1">irm https://raw.githubusercontent.com/wifi-man/PowerScripts/refs/heads/main/scripts/games/powerblock.ps1 | iex</div>
+          <button class="copy-btn" onclick="copyCode('cmd1', this)">📋 Copy Command</button>
+        </div>
+      </div>
+
+      <!-- Script 2 : FBI Prank -->
+      <div class="card">
+        <div>
+          <span class="badge badge-prank">🎭 PRANK</span>
+          <h2>🚨 FBI Hacking Prank</h2>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">
+            A cinematic hacking simulation screen with fake breach logs and audio alerts.
+          </p>
+        </div>
+        <div class="code-box-wrapper">
+          <div class="code-box" id="cmd2">irm https://raw.githubusercontent.com/wifi-man/PowerScripts/refs/heads/main/scripts/pranks/fbi-hacking-prank.ps1 | iex</div>
+          <button class="copy-btn" onclick="copyCode('cmd2', this)">📋 Copy Command</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Copyright &copy; 2026 PowerScripts is a project by Émile Gagnon</p>
+  </footer>
+
+  <script>
+    function copyCode(elementId, btn) {
+      const textToCopy = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        btn.innerText = '✅ Copied!';
+        btn.style.background = '#2e7d32';
+        btn.style.borderColor = '#4caf50';
+        setTimeout(() => {
+          btn.innerText = '📋 Copy Command';
+          btn.style.background = '';
+          btn.style.borderColor = '';
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
